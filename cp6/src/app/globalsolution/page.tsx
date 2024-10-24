@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-export default function Menu() {
+export default function Global() {
     return (
         <div>
         <h1>Teste</h1>
