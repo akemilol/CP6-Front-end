@@ -1,9 +1,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-//Aplicar Tailwind só aqui.
-@layer components {
-  body{
-    @apply bg-slate-600;
-  }
-}
+
