@@ -10,4 +10,4 @@ digite: ```npm run dev``` <br/>
 
 💁‍♀️ Valéria Conceição Dos Santos - RM: 557177
 
-💁‍♀️ Eduardo Augusto Pelegrino Einsfeldt - RM: 556460
+🙋‍♂️ Eduardo Augusto Pelegrino Einsfeldt - RM: 556460 
