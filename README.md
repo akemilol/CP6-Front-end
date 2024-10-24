@@ -5,7 +5,7 @@ e para rodar o site:
 digite: ```npm run dev``` <br/>
 
 ## 🗂️ Integrantes: 
-
+### 1TDSPM:
 💁‍♀️ Mirela Pinheiro Silva Rodrigues - RM: 558191
 
 💁‍♀️ Valéria Conceição Dos Santos - RM: 557177
