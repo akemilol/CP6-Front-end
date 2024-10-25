@@ -1,7 +1,7 @@
 export default function Global() {
     return (
         <div>
-        <h1>Teste</h1>
+        <h1>Global Solution</h1>
         </div>
     )
 }
