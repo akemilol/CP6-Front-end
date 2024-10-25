@@ -4,6 +4,10 @@
 
 @layer components{
 
+    body {
+        @apply bg-bodyBg;
+    }
+
     .cabecalho {
             @apply bg-cabecalhoBg p-4 text-white;
         

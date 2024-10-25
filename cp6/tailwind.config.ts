@@ -11,8 +11,8 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        cabecalhoBg: "#1a523d",
-        bodyBg: "#d1fae5",
+        cabecalhoBg: "#0ea5e9",
+        bodyBg: "#27272a",
       },
     },
   },
