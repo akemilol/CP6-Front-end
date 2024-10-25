@@ -1,7 +1,7 @@
 export default function Checkpoints() {
     return(
         <div>
-        <h1>Teste</h1>
+        <h1>Checkpoints</h1>
         </div>
     )
 }

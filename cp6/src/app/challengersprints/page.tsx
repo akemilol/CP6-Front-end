@@ -1,7 +1,7 @@
 export default function Challenge() {
     return(
         <div>
-            <h1>Teste</h1>
+            <h1>Challenge</h1>
         </div>
     )
 }
