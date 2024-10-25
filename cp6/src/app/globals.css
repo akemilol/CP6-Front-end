@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+
+    .cabecalho {
+            @apply bg-cabecalhoBg p-4 text-white;
+        
+    }
+}
