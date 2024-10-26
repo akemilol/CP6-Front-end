@@ -73,6 +73,9 @@ export default function Checkpoints() {
                             <th>ALUNO</th>
                             <th>DESCRIÇÃO</th>
                             <th>FEEDBACK</th>
+                            <th>
+                                <Link href={"/checkpoints/cad-checkpoint"}>CADASTRAR</Link>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>

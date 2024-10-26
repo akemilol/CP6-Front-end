@@ -73,6 +73,9 @@ export default function Globals() {
                             <th>ALUNO</th>
                             <th>DESCRIÇÃO</th>
                             <th>FEEDBACK</th>
+                            <th>
+                                <Link href={"/globalsolution/cad-globalsolution"}>CADASTRAR</Link>
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
