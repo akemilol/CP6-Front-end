@@ -3,7 +3,7 @@ import { promises as fs } from "fs";
 import { TipoCheckpoint } from "@/types";
 
 export async function GET(request:Request, {params}:{params:{id:number}}) {
-    const file = await fs.readFile(process.cwd() + "/src/data/base.json" , "utf-8");
+    const file = await fs.readFile(process.cwd() + "/src/data/baseCheckpoint.json" , "utf-8");
     const checkpoints:TipoCheckpoint[] = JSON.parse(file);
     const checkpoint = checkpoints.find( p => p.id == params.id);
     return NextResponse.json(checkpoint);
@@ -12,7 +12,7 @@ export async function GET(request:Request, {params}:{params:{id:number}}) {
 export async function PUT(request:Request, {params}:{params:{id:number}}) {
 
     try{
-        const file = await fs.readFile(process.cwd() + "/src/data/base.json" , "utf-8");
+        const file = await fs.readFile(process.cwd() + "/src/data/baseCheckpoint.json" , "utf-8");
 
         const checkpoints:TipoCheckpoint[] = JSON.parse(file)
 
@@ -35,7 +35,7 @@ export async function PUT(request:Request, {params}:{params:{id:number}}) {
 
             const fileJson = JSON.stringify(checkpoints);
 
-            await fs.writeFile(process.cwd() + "/src/data/base.json" , fileJson);
+            await fs.writeFile(process.cwd() + "/src/data/baseCheckpoint.json" , fileJson);
 
             return NextResponse.json({msg:"Checkpoint alterada com sucesso!"});
         }
@@ -47,7 +47,7 @@ export async function PUT(request:Request, {params}:{params:{id:number}}) {
 
 export async function DELETE(request:Request, {params}:{params:{id:number}}) {
     try {
-        const file = await fs.readFile(process.cwd() + "/src/data/base.json" , "utf-8");
+        const file = await fs.readFile(process.cwd() + "/src/data/baseCheckpoint.json" , "utf-8");
 
         const checkpoints:TipoCheckpoint[] = JSON.parse(file);
 
@@ -58,7 +58,7 @@ export async function DELETE(request:Request, {params}:{params:{id:number}}) {
 
             const fileJson = JSON.stringify(checkpoints);
 
-            await fs.writeFile(process.cwd() + "/src/data/base.json" , fileJson);
+            await fs.writeFile(process.cwd() + "/src/data/baseCheckpoint.json" , fileJson);
 
             return NextResponse.json({msg:"Checkpoint excluída com sucesso."});
         }

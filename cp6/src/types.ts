@@ -19,6 +19,8 @@ export type TipoGlobal = {
     nome:string;
     nota:number;
     aluno:string;
+    descricao:string;
+    feedback:string;
 }
 
 export type TipoChallenge = {
@@ -27,4 +29,6 @@ export type TipoChallenge = {
     nome:string;
     nota:number;
     aluno:string;
+    descricao:string;
+    feedback:string;
 }
