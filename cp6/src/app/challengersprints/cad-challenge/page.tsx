@@ -21,7 +21,7 @@ export default function CadCallenge() {
         e.preventDefault();
         try{
 
-            const response = await fetch(`http://localhost:3000/api/base-challenge/`,{
+            const response = await fetch(`http://localhost:3000/api/base-challengersprints/`,{
                 method:"POST",
                 headers:{
                     "Content-Type":"application/json"
@@ -40,7 +40,7 @@ export default function CadCallenge() {
                     descricao:"",
                     feedback:"",
                 });
-                navigate.push("/challenges");
+                navigate.push("/challengersprints");
             }
         } catch (error) {
             console.error("Falha no cadastramento de challenge: ", error);
