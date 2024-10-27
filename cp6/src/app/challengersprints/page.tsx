@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Challenges() {
 
-    const [challenge, setCheckpoint] = useState<TipoChallenge[]>([]);
+    const [challenge, setChallenge] = useState<TipoChallenge[]>([]);
     const [alunoSelecionado, setAlunoSelecionado] = useState<string>("Todos");
 
     useEffect(() => {
