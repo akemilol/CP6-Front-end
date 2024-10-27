@@ -78,15 +78,15 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
                     </div>
                     <div>
                         <label htmlFor="idAluno">Nome do Aluno</label>
-                        <input type="text" name="aluno" id="idAluno" value={checkpoint.aluno} onChange={(e)=> setCheckpoint({...checkpoint, aluno:e.target.value})} placeholder="Qual o Aluno?" required/>
+                        <input type="text" name="aluno" id="idAluno" value={challenge.aluno} onChange={(e)=> setChallenge({...challenge, aluno:e.target.value})} placeholder="Qual o Aluno?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idDescricao">Descrição da Checkpoint</label>
-                        <input type="text" name="descricao" id="idDescricao" value={checkpoint.descricao} onChange={(e)=> setCheckpoint({...checkpoint, descricao:e.target.value})} placeholder="Descreva a Checkpoint" required/>
+                        <label htmlFor="idDescricao">Descrição do Challenge</label>
+                        <input type="text" name="descricao" id="idDescricao" value={challenge.descricao} onChange={(e)=> setChallenge({...challenge, descricao:e.target.value})} placeholder="Descreva a Challenge" required/>
                     </div>
                     <div>
                         <label htmlFor="idFeedback">Feedback da Checkpoint</label>
-                        <input type="text" name="feedback" id="idFeedback" value={checkpoint.feedback} onChange={(e)=> setCheckpoint({...checkpoint, feedback:e.target.value})} placeholder="Qual foi o Feedback?" required/>
+                        <input type="text" name="feedback" id="idFeedback" value={challenge.feedback} onChange={(e)=> setChallenge({...challenge, feedback:e.target.value})} placeholder="Qual foi o Feedback?" required/>
                     </div>
                     <div>
                         <button type="submit">Atualizar</button>
@@ -94,10 +94,10 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
                 </form>
             </div>
             <div>
-                <p> Materia     - {checkpoint.materia}</p>
-                <p> Nome        - {checkpoint.nome}</p>
-                <p> Nota        - {checkpoint.nota}</p>
-                <p> Aluno       - {checkpoint.aluno}</p>
+                <p> Materia     - {challenge.materia}</p>
+                <p> Nome        - {challenge.nome}</p>
+                <p> Nota        - {challenge.nota}</p>
+                <p> Aluno       - {challenge.aluno}</p>
             </div>
         </div>
     )
