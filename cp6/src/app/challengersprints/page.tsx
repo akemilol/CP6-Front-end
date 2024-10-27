@@ -11,12 +11,12 @@ export default function Challenges() {
     useEffect(() => {
         const chamadaApi = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/base-checkpoint');
+                const response = await fetch('http://localhost:3000/api/base-challenge');
                 if (!response.ok) {
                     throw new Error("Erro ao buscar dados da API");
                 }
                 const dados = await response.json();
-                setCheckpoint(dados);
+                setChallenge(dados);
             } catch (error) {
                 console.error("Erro na chamada da API: ", error);
             }
@@ -27,13 +27,13 @@ export default function Challenges() {
 
     const handleDelete = async (id: number) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/base-checkpoint/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/base-challenge/${id}`, {
                 method: "DELETE",
             });
 
             if (response.ok) {
-                alert("A checkpoint foi excluída com sucesso!");
-                setCheckpoint((prev) => prev.filter((p) => p.id !== id));
+                alert("A challenge foi excluída com sucesso!");
+                setChallenge((prev) => prev.filter((p) => p.id !== id));
             } else {
                 throw new Error("Erro: " + response.statusText);
             }
@@ -46,14 +46,14 @@ export default function Challenges() {
         setAlunoSelecionado(aluno);
     };
 
-    const checkpointsFiltrados = alunoSelecionado === "Todos" 
-        ? checkpoint 
-        : checkpoint.filter((p) => p.aluno === alunoSelecionado);
+    const challengesFiltrados = alunoSelecionado === "Todos" 
+        ? challenge 
+        : challenge.filter((p) => p.aluno === alunoSelecionado);
 
     return (
         <div>
-            <h1>Checkpoints</h1>
-            <p>Descrição de Checkpoints Aqui.</p>
+            <h1>Challenges</h1>
+            <p>Descrição de Challenges Aqui.</p>
 
             <div>
                 <button onClick={() => handleAlunoChange("Todos")}>Todos</button>
