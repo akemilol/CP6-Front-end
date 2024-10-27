@@ -52,22 +52,22 @@ export default function CadCallenge() {
         <div>
             <div>
                 <form onSubmit={handleSubmit}>
-                    <h1> Cadastrar Checkpoint</h1>
+                    <h1> Cadastrar Challenge</h1>
                     <div>
-                        <label htmlFor="idMateria">Materia da Checkpoint</label>
-                        <input type="text" name="materia" id="idMateria" value={checkpoint.materia} onChange={(e)=> setCheckpoint({...checkpoint, materia:e.target.value})} placeholder="Qual a Matéria da Checkpoint?" required/>
+                        <label htmlFor="idMateria">Materia do Challenge</label>
+                        <input type="text" name="materia" id="idMateria" value={challenge.materia} onChange={(e)=> setChallenge({...challenge, materia:e.target.value})} placeholder="Qual a Matéria do Challenge?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idNome">Nome da Checkpoint</label>
-                        <input type="text" name="nome" id="idNome" value={checkpoint.nome} onChange={(e)=> setCheckpoint({...checkpoint, nome:e.target.value})} placeholder="Qual o Nome da Checkpoint?" required/>
+                        <label htmlFor="idNome">Nome do Challenge</label>
+                        <input type="text" name="nome" id="idNome" value={challenge.nome} onChange={(e)=> setChallenge({...challenge, nome:e.target.value})} placeholder="Qual o Nome do Challenge?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idNota">Nota da Checkpoint</label>
-                        <input type="number" name="nota" id="idNota" value={checkpoint.nota} onChange={(e)=> setCheckpoint({...checkpoint, nota: parseInt(e.target.value)})} placeholder="Qual a Nota da Checkpoint?" required/>
+                        <label htmlFor="idNota">Nota do Challenge</label>
+                        <input type="number" name="nota" id="idNota" value={challenge.nota} onChange={(e)=> setChallenge({...challenge, nota: parseInt(e.target.value)})} placeholder="Qual a Nota do Challenge?" required/>
                     </div>
                     <div>
                         <label htmlFor="idAluno">Nome do Aluno</label>
-                        <input type="text" name="aluno" id="idAluno" value={checkpoint.aluno} onChange={(e)=> setCheckpoint({...checkpoint, aluno:e.target.value})} placeholder="Qual o Aluno?" required/>
+                        <input type="text" name="aluno" id="idAluno" value={challenge.aluno} onChange={(e)=> setChallenge({...challenge, aluno:e.target.value})} placeholder="Qual o Aluno?" required/>
                     </div>
                     <div>
                         <label htmlFor="idDescricao">Descrição da Checkpoint</label>
