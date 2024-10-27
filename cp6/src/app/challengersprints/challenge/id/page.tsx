@@ -19,7 +19,7 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
 
     useEffect(() => {
         const chamadaApi = async () =>{
-            const response = await fetch(`http://localhost:3000/api/base-challenge/${params.id}`);
+            const response = await fetch(`http://localhost:3000/api/base-challengersprints/${params.id}`);
             const dados = await response.json();
             setChallenge(dados);
         }
@@ -32,7 +32,7 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
         e.preventDefault();
         try{
 
-            const response = await fetch(`http://localhost:3000/api/base-challenge/${params.id}`,{
+            const response = await fetch(`http://localhost:3000/api/base-challengersprints/${params.id}`,{
                 method:"PUT",
                 headers:{
                     "Content-Type":"application/json"
@@ -51,7 +51,7 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
                     descricao:"",
                     feedback:"",
                 });
-                navigate.push("/challenges");
+                navigate.push("/challengersprints");
             }
         } catch (error) {
             console.error("Falha na atualização da challenge: ", error);
@@ -61,19 +61,19 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
 
     return(
         <div>
-            <h1> Editar Challenges</h1>
+            <h1> Editar Challenge</h1>
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="idMateria">Materia da Challenge</label>
-                        <input type="text" name="materia" id="idMateria" value={challenge.materia} onChange={(e)=> setChallenge({...challenge, materia:e.target.value})} placeholder="Qual a Matéria da Challenge?" required/>
+                        <label htmlFor="idMateria">Materia do Challenge</label>
+                        <input type="text" name="materia" id="idMateria" value={challenge.materia} onChange={(e)=> setChallenge({...challenge, materia:e.target.value})} placeholder="Qual a Matéria do Challenge?" required/>
                     </div>
                     <div>
                         <label htmlFor="idNome">Nome do Challenge</label>
-                        <input type="text" name="nome" id="idNome" value={challenge.nome} onChange={(e)=> setChallenge({...challenge, nome:e.target.value})} placeholder="Qual o Nome da Challenge?" required/>
+                        <input type="text" name="nome" id="idNome" value={challenge.nome} onChange={(e)=> setChallenge({...challenge, nome:e.target.value})} placeholder="Qual o Nome do Challenge?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idNota">Nota da Challenge</label>
+                        <label htmlFor="idNota">Nota do Challenge</label>
                         <input type="number" name="nota" id="idNota" value={challenge.nota} onChange={(e)=> setChallenge({...challenge, nota: parseInt(e.target.value)})} placeholder="Qual a Nota do Challenge?" required/>
                     </div>
                     <div>
@@ -82,7 +82,7 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
                     </div>
                     <div>
                         <label htmlFor="idDescricao">Descrição do Challenge</label>
-                        <input type="text" name="descricao" id="idDescricao" value={challenge.descricao} onChange={(e)=> setChallenge({...challenge, descricao:e.target.value})} placeholder="Descreva a Challenge" required/>
+                        <input type="text" name="descricao" id="idDescricao" value={challenge.descricao} onChange={(e)=> setChallenge({...challenge, descricao:e.target.value})} placeholder="Descreva o Challenge" required/>
                     </div>
                     <div>
                         <label htmlFor="idFeedback">Feedback da Checkpoint</label>
