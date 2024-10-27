@@ -74,12 +74,12 @@ export default function Challenges() {
                             <th>DESCRIÇÃO</th>
                             <th>FEEDBACK</th>
                             <th>
-                                <Link href={"/checkpoints/cad-checkpoint"}>CADASTRAR</Link>
+                                <Link href={"/challenges/cad-challenge"}>CADASTRAR</Link>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        {checkpointsFiltrados.map((p) => (
+                        {challengesFiltrados.map((p) => (
                             <tr key={p.id}>
                                 <td>{p.id}</td>
                                 <td>{p.materia}</td>
@@ -89,7 +89,7 @@ export default function Challenges() {
                                 <td>{p.descricao}</td>
                                 <td>{p.feedback}</td>
                                 <td>
-                                    <Link href={`/checkpoints/checkpoint/${p.id}`}> EDITAR </Link> | 
+                                    <Link href={`/challenges/challenge/${p.id}`}> EDITAR </Link> | 
                                     <a href="#" onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}> EXCLUIR </a>
                                 </td>
                             </tr>
