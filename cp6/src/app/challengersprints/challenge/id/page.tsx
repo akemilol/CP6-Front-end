@@ -54,27 +54,27 @@ export default function EditarChallenge({params}:{params:{id:number}}) {
                 navigate.push("/challenges");
             }
         } catch (error) {
-            console.error("Falha na atualização da checkpoint: ", error);
+            console.error("Falha na atualização da challenge: ", error);
             navigate.push("/error");
         }
     }
 
     return(
         <div>
-            <h1> Editar Checkpoints</h1>
+            <h1> Editar Challenges</h1>
             <div>
                 <form onSubmit={handleSubmit}>
                     <div>
-                        <label htmlFor="idMateria">Materia da Checkpoint</label>
-                        <input type="text" name="materia" id="idMateria" value={checkpoint.materia} onChange={(e)=> setCheckpoint({...checkpoint, materia:e.target.value})} placeholder="Qual a Matéria da Checkpoint?" required/>
+                        <label htmlFor="idMateria">Materia da Challenge</label>
+                        <input type="text" name="materia" id="idMateria" value={challenge.materia} onChange={(e)=> setChallenge({...challenge, materia:e.target.value})} placeholder="Qual a Matéria da Challenge?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idNome">Nome da Checkpoint</label>
-                        <input type="text" name="nome" id="idNome" value={checkpoint.nome} onChange={(e)=> setCheckpoint({...checkpoint, nome:e.target.value})} placeholder="Qual o Nome da Checkpoint?" required/>
+                        <label htmlFor="idNome">Nome do Challenge</label>
+                        <input type="text" name="nome" id="idNome" value={challenge.nome} onChange={(e)=> setChallenge({...challenge, nome:e.target.value})} placeholder="Qual o Nome da Challenge?" required/>
                     </div>
                     <div>
-                        <label htmlFor="idNota">Nota da Checkpoint</label>
-                        <input type="number" name="nota" id="idNota" value={checkpoint.nota} onChange={(e)=> setCheckpoint({...checkpoint, nota: parseInt(e.target.value)})} placeholder="Qual a Nota da Checkpoint?" required/>
+                        <label htmlFor="idNota">Nota da Challenge</label>
+                        <input type="number" name="nota" id="idNota" value={challenge.nota} onChange={(e)=> setChallenge({...challenge, nota: parseInt(e.target.value)})} placeholder="Qual a Nota do Challenge?" required/>
                     </div>
                     <div>
                         <label htmlFor="idAluno">Nome do Aluno</label>
