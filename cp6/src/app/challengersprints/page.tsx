@@ -11,7 +11,7 @@ export default function Challenges() {
     useEffect(() => {
         const chamadaApi = async () => {
             try {
-                const response = await fetch('http://localhost:3000/api/base-challenge');
+                const response = await fetch('http://localhost:3000/api/base-challengersprints');
                 if (!response.ok) {
                     throw new Error("Erro ao buscar dados da API");
                 }
@@ -27,7 +27,7 @@ export default function Challenges() {
 
     const handleDelete = async (id: number) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/base-challenge/${id}`, {
+            const response = await fetch(`http://localhost:3000/api/base-challengersprints/${id}`, {
                 method: "DELETE",
             });
 
@@ -74,7 +74,7 @@ export default function Challenges() {
                             <th>DESCRIÇÃO</th>
                             <th>FEEDBACK</th>
                             <th>
-                                <Link href={"/challenges/cad-challenge"}>CADASTRAR</Link>
+                                <Link href={"/challengersprints/cad-challenge"}>CADASTRAR</Link>
                             </th>
                         </tr>
                     </thead>
@@ -89,7 +89,7 @@ export default function Challenges() {
                                 <td>{p.descricao}</td>
                                 <td>{p.feedback}</td>
                                 <td>
-                                    <Link href={`/challenges/challenge/${p.id}`}> EDITAR </Link> | 
+                                    <Link href={`/challengersprints/challenge/${p.id}`}> EDITAR </Link> | 
                                     <a href="#" onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}> EXCLUIR </a>
                                 </td>
                             </tr>
