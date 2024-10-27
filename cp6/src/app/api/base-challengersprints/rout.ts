@@ -29,13 +29,13 @@ export async function POST(request:Request) {
 
             novoChallenge.id = (challenges [challenges.length - 1].id +1)
 
-            checkpoints.push(novoCheckpoint);
+            challenges.push(novoChallenge);
 
-            const fileJSON = JSON.stringify(checkpoints)
+            const fileJSON = JSON.stringify(challenges)
 
-            await fs.writeFile(process.cwd() + "/src/data/baseCheckpoint.json" , fileJSON);
+            await fs.writeFile(process.cwd() + "/src/data/baseChallenge.json" , fileJSON);
 
-            return NextResponse.json(novoCheckpoint,{status:201});
+            return NextResponse.json(novoChallenge,{status:201});
     }catch(error){
         return NextResponse.json({error:"Falha na gravação: "+error},{status:500});
     }
