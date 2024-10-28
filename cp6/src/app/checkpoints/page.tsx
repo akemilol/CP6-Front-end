@@ -53,33 +53,33 @@ export default function Checkpoints() {
     return (
         <div className="min-h-screen bg-blue-950 p-8">
             <h1 className="text-4xl font-bold text-center text-white mb-6">Checkpoints</h1>
-            <p className="text-center text-lg text-gray-300 mb-8">Checkpoints Ou CP são as provas semestrais aplicadas pelos professores. São aplicada 3 provas por semestre</p>
+            <p className="text-center text-lg text-gray-300 mb-8">Checkpoints Ou CP são as provas semestrais aplicadas pelos professores. São aplicadas 3 provas por semestre.</p>
 
             <div className="flex justify-center gap-4 mb-8">
                 <button 
                     onClick={() => handleAlunoChange("Todos")}
-                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Todos' ? 'bg-cyan-500 text-white' : 'bg-cyan-700 text-white hover:bg-cyan-600'}`}>
+                    className={`px-4 py-2 font-semibold rounded-md text-white ${alunoSelecionado === 'Todos' ? 'bg-cyan-500' : 'bg-cyan-700 hover:bg-cyan-600'}`}>
                     Todos
                 </button>
                 <button 
                     onClick={() => handleAlunoChange("Valéria")}
-                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Valéria' ? 'bg-teal-500 text-white' : 'bg-teal-700 text-white hover:bg-teal-600'}`}>
+                    className={`px-4 py-2 font-semibold rounded-md text-white ${alunoSelecionado === 'Valéria' ? 'bg-teal-500' : 'bg-teal-700 hover:bg-teal-600'}`}>
                     Valéria
                 </button>
                 <button 
                     onClick={() => handleAlunoChange("Eduardo")}
-                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Eduardo' ? 'bg-indigo-500 text-white' : 'bg-indigo-700 text-white hover:bg-indigo-600'}`}>
+                    className={`px-4 py-2 font-semibold rounded-md text-white ${alunoSelecionado === 'Eduardo' ? 'bg-indigo-500' : 'bg-indigo-700 hover:bg-indigo-600'}`}>
                     Eduardo
                 </button>
                 <button 
                     onClick={() => handleAlunoChange("Mirela")}
-                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Mirela' ? 'bg-purple-500 text-white' : 'bg-purple-700 text-white hover:bg-purple-600'}`}>
+                    className={`px-4 py-2 font-semibold rounded-md text-white ${alunoSelecionado === 'Mirela' ? 'bg-purple-500' : 'bg-purple-700 hover:bg-purple-600'}`}>
                     Mirela
                 </button>
             </div>
 
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <table className="min-w-full bg-blue-900 text-white shadow-md rounded-lg overflow-hidden">
                     <thead className="bg-blue-700 text-white">
                         <tr>
                             <th className="py-3 px-6 text-left">ID</th>
@@ -96,16 +96,16 @@ export default function Checkpoints() {
                     </thead>
                     <tbody>
                         {checkpointsFiltrados.map((p) => (
-                            <tr key={p.id} className="border-b">
+                            <tr key={p.id} className="border-b hover:bg-blue-800">
                                 <td className="py-3 px-6">{p.id}</td>
                                 <td className="py-3 px-6">{p.materia}</td>
                                 <td className="py-3 px-6">{p.nome}</td>
                                 <td className="py-3 px-6">{p.nota}</td>
-                                <td className="py-3 px-6 text-blue-500 font-bold">{p.aluno}</td>
+                                <td className="py-3 px-6 text-cyan-400 font-bold">{p.aluno}</td>
                                 <td className="py-3 px-6">{p.descricao}</td>
                                 <td className="py-3 px-6">{p.feedback}</td>
                                 <td className="py-3 px-6">
-                                    <Link href={`/checkpoints/checkpoint/${p.id}`} className="text-blue-500 hover:underline mr-2">EDITAR</Link> | 
+                                    <Link href={`/checkpoints/checkpoint/${p.id}`} className="text-cyan-400 hover:underline mr-2">EDITAR</Link> | 
                                     <a 
                                         href="#" 
                                         onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}

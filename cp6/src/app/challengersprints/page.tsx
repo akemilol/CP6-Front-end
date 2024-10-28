@@ -53,7 +53,7 @@ export default function Challenges() {
     return (
         <div className="min-h-screen bg-blue-950 p-8">
             <h1 className="text-4xl font-bold text-center text-white mb-6">Challenges</h1>
-            <p className="text-center text-lg text-gray-300 mb-8">Challenges são os projetos semestrais com duração de duas splints por semestre</p>
+            <p className="text-center text-lg text-gray-300 mb-8">Challenges são os projetos semestrais com duração de duas splints por semestre.</p>
 
             <div className="flex justify-center gap-4 mb-8">
                 <button
@@ -79,7 +79,7 @@ export default function Challenges() {
             </div>
 
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <table className="min-w-full bg-blue-900 text-white shadow-md rounded-lg overflow-hidden">
                     <thead className="bg-blue-700 text-white">
                         <tr>
                             <th className="py-3 px-6 text-left">ID</th>
@@ -96,16 +96,16 @@ export default function Challenges() {
                     </thead>
                     <tbody>
                         {challengesFiltrados.map((p) => (
-                            <tr key={p.id} className="border-b hover:bg-gray-100">
+                            <tr key={p.id} className="border-b hover:bg-blue-800">
                                 <td className="py-3 px-6">{p.id}</td>
                                 <td className="py-3 px-6">{p.materia}</td>
                                 <td className="py-3 px-6">{p.nome}</td>
                                 <td className="py-3 px-6">{p.nota}</td>
-                                <td className="py-3 px-6 text-blue-500 font-bold">{p.aluno}</td>
+                                <td className="py-3 px-6 text-cyan-400 font-bold">{p.aluno}</td>
                                 <td className="py-3 px-6">{p.descricao}</td>
                                 <td className="py-3 px-6">{p.feedback}</td>
                                 <td className="py-3 px-6">
-                                    <Link href={`/challengersprints/challenge/${p.id}`} className="text-blue-500 hover:underline mr-2">EDITAR</Link> | 
+                                    <Link href={`/challengersprints/challenge/${p.id}`} className="text-cyan-400 hover:underline mr-2">EDITAR</Link> | 
                                     <a
                                         href="#"
                                         onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}
