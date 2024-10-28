@@ -29,7 +29,7 @@ export default function EditarCheckpoint({ params }: { params: { id: number } })
         };
 
         chamadaApi();
-    }, []);
+    }, [params.id]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
