@@ -51,46 +51,67 @@ export default function Checkpoints() {
         : checkpoint.filter((p) => p.aluno === alunoSelecionado);
 
     return (
-        <div>
-            <h1>Checkpoints</h1>
-            <p>Descrição de Checkpoints Aqui.</p>
+        <div className="min-h-screen bg-blue-950 p-8">
+            <h1 className="text-4xl font-bold text-center text-white mb-6">Checkpoints</h1>
+            <p className="text-center text-lg text-gray-300 mb-8">Checkpoints Ou CP são as provas semestrais aplicadas pelos professores. São aplicada 3 provas por semestre</p>
 
-            <div>
-                <button onClick={() => handleAlunoChange("Todos")}>Todos</button>
-                <button onClick={() => handleAlunoChange("Valéria")}>Valéria</button>
-                <button onClick={() => handleAlunoChange("Eduardo")}>Eduardo</button>
-                <button onClick={() => handleAlunoChange("Mirela")}>Mirela</button>
+            <div className="flex justify-center gap-4 mb-8">
+                <button 
+                    onClick={() => handleAlunoChange("Todos")}
+                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Todos' ? 'bg-cyan-500 text-white' : 'bg-cyan-700 text-white hover:bg-cyan-600'}`}>
+                    Todos
+                </button>
+                <button 
+                    onClick={() => handleAlunoChange("Valéria")}
+                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Valéria' ? 'bg-teal-500 text-white' : 'bg-teal-700 text-white hover:bg-teal-600'}`}>
+                    Valéria
+                </button>
+                <button 
+                    onClick={() => handleAlunoChange("Eduardo")}
+                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Eduardo' ? 'bg-indigo-500 text-white' : 'bg-indigo-700 text-white hover:bg-indigo-600'}`}>
+                    Eduardo
+                </button>
+                <button 
+                    onClick={() => handleAlunoChange("Mirela")}
+                    className={`px-4 py-2 font-semibold rounded-md ${alunoSelecionado === 'Mirela' ? 'bg-purple-500 text-white' : 'bg-purple-700 text-white hover:bg-purple-600'}`}>
+                    Mirela
+                </button>
             </div>
 
-            <div>
-                <table className="tabelaCP">
-                    <thead>
+            <div className="overflow-x-auto">
+                <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                    <thead className="bg-blue-700 text-white">
                         <tr>
-                            <th>ID</th>
-                            <th>MATERIA</th>
-                            <th>NOME</th>
-                            <th>NOTA</th>
-                            <th>ALUNO</th>
-                            <th>DESCRIÇÃO</th>
-                            <th>FEEDBACK</th>
-                            <th>
-                                <Link href={"/checkpoints/cad-checkpoint"}>CADASTRAR</Link>
+                            <th className="py-3 px-6 text-left">ID</th>
+                            <th className="py-3 px-6 text-left">MATERIA</th>
+                            <th className="py-3 px-6 text-left">NOME</th>
+                            <th className="py-3 px-6 text-left">NOTA</th>
+                            <th className="py-3 px-6 text-left">ALUNO</th>
+                            <th className="py-3 px-6 text-left">DESCRIÇÃO</th>
+                            <th className="py-3 px-6 text-left">FEEDBACK</th>
+                            <th className="py-3 px-6 text-left">
+                                <Link href={"/checkpoints/cad-checkpoint"} className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">CADASTRAR</Link>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
                         {checkpointsFiltrados.map((p) => (
-                            <tr key={p.id}>
-                                <td>{p.id}</td>
-                                <td>{p.materia}</td>
-                                <td>{p.nome}</td>
-                                <td>{p.nota}</td>
-                                <td>{p.aluno}</td>
-                                <td>{p.descricao}</td>
-                                <td>{p.feedback}</td>
-                                <td>
-                                    <Link href={`/checkpoints/checkpoint/${p.id}`}> EDITAR </Link> | 
-                                    <a href="#" onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}> EXCLUIR </a>
+                            <tr key={p.id} className="border-b">
+                                <td className="py-3 px-6">{p.id}</td>
+                                <td className="py-3 px-6">{p.materia}</td>
+                                <td className="py-3 px-6">{p.nome}</td>
+                                <td className="py-3 px-6">{p.nota}</td>
+                                <td className="py-3 px-6 text-blue-500 font-bold">{p.aluno}</td>
+                                <td className="py-3 px-6">{p.descricao}</td>
+                                <td className="py-3 px-6">{p.feedback}</td>
+                                <td className="py-3 px-6">
+                                    <Link href={`/checkpoints/checkpoint/${p.id}`} className="text-blue-500 hover:underline mr-2">EDITAR</Link> | 
+                                    <a 
+                                        href="#" 
+                                        onClick={(e) => { e.preventDefault(); handleDelete(p.id); }}
+                                        className="text-red-500 hover:underline ml-2">
+                                        EXCLUIR
+                                    </a>
                                 </td>
                             </tr>
                         ))}
